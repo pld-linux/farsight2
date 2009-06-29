@@ -1,11 +1,11 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.11
+Version:	0.0.12
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	8a199a22f8588ef4b0ea0875628f529a
+# Source0-md5:	cd4cb116947dd8ce2c837ba398e27c4e
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -14,11 +14,11 @@ BuildRequires:	gstreamer-devel >= 0.10.22
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.22
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	gupnp-igd-devel
-BuildRequires:	libnice-devel >= 0.0.3
+BuildRequires:	libnice-devel >= 0.0.6
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4
-BuildRequires:	python-gstreamer-devel
+BuildRequires:	python-gstreamer-devel >= 0.10.10
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
