@@ -1,11 +1,11 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.12
-Release:	2
+Version:	0.0.14
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	cd4cb116947dd8ce2c837ba398e27c4e
+# Source0-md5:	fbfa45661b7949abf9bf92c2531ac392
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -126,6 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/farsight2-0.0/libnice-transmitter.so
 %attr(755,root,root) %{_libdir}/farsight2-0.0/librawudp-transmitter.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsfunnel.so
+%attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsmsnconference.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrtcpfilter.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrtpconference.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsvideoanyrate.so
