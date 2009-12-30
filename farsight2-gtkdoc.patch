@@ -1,0 +1,12 @@
+diff -urN farsight2-0.0.16/common-modified/gtk-doc-plugins.mak farsight2-0.0.16.new/common-modified/gtk-doc-plugins.mak
+--- farsight2-0.0.16/common-modified/gtk-doc-plugins.mak	2009-09-18 21:41:34.000000000 +0200
++++ farsight2-0.0.16.new/common-modified/gtk-doc-plugins.mak	2009-12-30 14:08:43.318386410 +0100
+@@ -249,7 +249,7 @@
+ 	test "x$(HTML_IMAGES)" = "x" || for i in "" $(HTML_IMAGES) ; do \
+ 	    if test "$$i" != ""; then cp $(srcdir)/$$i html ; fi; done
+ 	@echo '-- Fixing Crossreferences' 
+-	gtkdoc-fixxref --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
++	gtkdoc-fixxref --module=$(DOC_MODULE) --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
+ 	touch html-build.stamp
+ 
+ clean-local-gtkdoc:
