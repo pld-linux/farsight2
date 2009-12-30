@@ -1,20 +1,21 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.14
+Version:	0.0.16
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	fbfa45661b7949abf9bf92c2531ac392
+# Source0-md5:	ca6261e19cfcfe8a6e5e51b8c2f5ad16
+Patch0:		%{name}-gtkdoc.patch
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gstreamer-devel >= 0.10.22
-BuildRequires:	gstreamer-plugins-base-devel >= 0.10.22
+BuildRequires:	gstreamer-devel >= 0.10.23
+BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	gupnp-igd-devel
-BuildRequires:	libnice-devel >= 0.0.6
+BuildRequires:	libnice-devel >= 0.0.9
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4
@@ -39,8 +40,8 @@ Summary:	Header files for farsight2 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki farsight2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gstreamer-devel >= 0.10.22
-Requires:	gstreamer-plugins-base-devel >= 0.10.22
+Requires:	gstreamer-devel >= 0.10.23
+Requires:	gstreamer-plugins-base-devel >= 0.10.23
 
 %description devel
 Header files for farsight2 library.
@@ -86,8 +87,10 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__gtkdocize}
 %{__libtoolize}
 %{__aclocal} -I common/m4 -I m4
 %{__autoconf}
