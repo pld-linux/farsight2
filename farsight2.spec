@@ -1,11 +1,11 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.16
+Version:	0.0.17
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	ca6261e19cfcfe8a6e5e51b8c2f5ad16
+# Source0-md5:	b109d133d39dd682a224a47e31c5eac7
 Patch0:		%{name}-gtkdoc.patch
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
@@ -14,6 +14,7 @@ BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gstreamer-devel >= 0.10.23
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
 BuildRequires:	gtk-doc >= 1.8
+BuildRequires:	gupnp-devel >= 0.13
 BuildRequires:	gupnp-igd-devel
 BuildRequires:	libnice-devel >= 0.0.9
 BuildRequires:	libtool
