@@ -10,6 +10,7 @@ Patch0:		%{name}-gtkdoc.patch
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gstreamer-devel >= 0.10.23
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
@@ -22,6 +23,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-gstreamer-devel >= 0.10.10
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
