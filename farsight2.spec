@@ -1,11 +1,11 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.17
-Release:	2
+Version:	0.0.20
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	b109d133d39dd682a224a47e31c5eac7
+# Source0-md5:	d07628d9a06c4d6989189eec947e4923
 Patch0:		%{name}-gtkdoc.patch
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
