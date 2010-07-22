@@ -1,12 +1,11 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.20
+Version:	0.0.21
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	d07628d9a06c4d6989189eec947e4923
-Patch0:		%{name}-gtkdoc.patch
+# Source0-md5:	5898612c389f3538a4160e677c03087a
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -90,7 +89,6 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gtkdocize}
