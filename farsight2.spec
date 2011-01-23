@@ -6,6 +6,7 @@ License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
 # Source0-md5:	5898612c389f3538a4160e677c03087a
+Patch0:		%{name}-make.patch
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -89,6 +90,7 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gtkdocize}
