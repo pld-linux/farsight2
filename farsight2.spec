@@ -1,13 +1,12 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.21
-Release:	2
+Version:	0.0.23
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	5898612c389f3538a4160e677c03087a
-Patch0:		%{name}-make.patch
 URL:		http://farsight.freedesktop.org/
+Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
+# Source0-md5:	0e534ae97139a68cee16b5190cc5cd9c
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
@@ -17,7 +16,7 @@ BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	gupnp-devel >= 0.13
 BuildRequires:	gupnp-igd-devel
-BuildRequires:	libnice-devel >= 0.0.9
+BuildRequires:	libnice-devel >= 0.1.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4
@@ -90,7 +89,6 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gtkdocize}
@@ -131,6 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/farsight2-0.0/libmulticast-transmitter.so
 %attr(755,root,root) %{_libdir}/farsight2-0.0/libnice-transmitter.so
 %attr(755,root,root) %{_libdir}/farsight2-0.0/librawudp-transmitter.so
+%attr(755,root,root) %{_libdir}/farsight2-0.0/libshm-transmitter.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsfunnel.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsmsnconference.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrtcpfilter.so
