@@ -1,12 +1,12 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.23
+Version:	0.0.29
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 URL:		http://farsight.freedesktop.org/
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	0e534ae97139a68cee16b5190cc5cd9c
+# Source0-md5:	276076f65b70236d981c288413572168
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
@@ -132,9 +132,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/farsight2-0.0/libshm-transmitter.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsfunnel.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsmsnconference.so
+%attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrawconference.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrtcpfilter.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsrtpconference.so
 %attr(755,root,root) %{_libdir}/gstreamer-0.10/libfsvideoanyrate.so
+%dir %{_datadir}/farsight2
+%dir %{_datadir}/farsight2/0.0
+%{_datadir}/farsight2/0.0/fsrtpconference
 
 %files devel
 %defattr(644,root,root,755)
