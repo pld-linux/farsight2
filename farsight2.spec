@@ -99,6 +99,7 @@ Wiązania Pythona do farsight2.
 %{__automake}
 %configure \
 	--enable-gtk-doc \
+	--disable-silent-rules \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
