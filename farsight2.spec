@@ -1,20 +1,20 @@
 Summary:	Audio/Video Communications Framework
 Name:		farsight2
-Version:	0.0.30
-Release:	2
+Version:	0.0.31
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
-# Source0-md5:	e13e0f76883b79409bcbe232e645773e
+# Source0-md5:	3771d8268f025b28261cc1e977fab27f
 URL:		http://farsight.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gstreamer-devel >= 0.10.23
+BuildRequires:	gstreamer-devel >= 0.10.33
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
 BuildRequires:	gtk-doc >= 1.8
-BuildRequires:	gupnp-devel >= 0.13
+BuildRequires:	gupnp-devel >= 0.14
 BuildRequires:	gupnp-igd-devel
 BuildRequires:	libnice-devel >= 0.1.0
 BuildRequires:	libtool
@@ -42,7 +42,7 @@ Summary:	Header files for farsight2 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki farsight2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gstreamer-devel >= 0.10.23
+Requires:	gstreamer-devel >= 0.10.33
 Requires:	gstreamer-plugins-base-devel >= 0.10.23
 
 %description devel
@@ -103,7 +103,6 @@ Wiązania Pythona do farsight2.
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
