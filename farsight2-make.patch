@@ -1,0 +1,11 @@
+--- farsight2-0.0.31/common-modified/gst-glib-gen.mak.orig	2011-09-07 22:20:18.000000000 +0200
++++ farsight2-0.0.31/common-modified/gst-glib-gen.mak	2021-03-08 17:19:02.789640588 +0100
+@@ -6,6 +6,7 @@
+ #glib_gen_prefix=gst_color_balance
+ #glib_gen_basename=colorbalance
+ 
+-enum_headers=$(foreach h,$(glib_enum_headers),\n\#include \"$(h)\")
++gst_hash=\#
++enum_headers=$(foreach h,$(glib_enum_headers),\n$(gst_hash)include \"$(h)\")
+ 
+ # these are all the rules generating the relevant files

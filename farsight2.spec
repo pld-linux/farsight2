@@ -1,18 +1,22 @@
 Summary:	Audio/Video Communications Framework
+Summary(pl.UTF-8):	Szkielet do komunikacji audio/video
 Name:		farsight2
 Version:	0.0.31
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://farsight.freedesktop.org/releases/farsight2/%{name}-%{version}.tar.gz
+Source0:	https://www.freedesktop.org/software/farstream/releases/farsight2/%{name}-%{version}.tar.gz
 # Source0-md5:	3771d8268f025b28261cc1e977fab27f
-URL:		http://farsight.freedesktop.org/
+Patch0:		%{name}-make.patch
+Patch1:		gstreamer-common-gtkdoc.patch
+Patch2:		%{name}-gtk-doc.patch
+URL:		https://www.freedesktop.org/wiki/Software/Farstream/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gstreamer-devel >= 0.10.33
-BuildRequires:	gstreamer-plugins-base-devel >= 0.10.23
+BuildRequires:	glib2-devel >= 1:2.26
+BuildRequires:	gstreamer0.10-devel >= 0.10.33
+BuildRequires:	gstreamer0.10-plugins-base-devel >= 0.10.33
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	gupnp-devel >= 0.14
 BuildRequires:	gupnp-igd-devel
@@ -20,9 +24,13 @@ BuildRequires:	libnice-devel >= 0.1.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4
-BuildRequires:	python-gstreamer-devel >= 0.10.10
-BuildRequires:	python-pygtk-devel >= 2:2.12.0
+BuildRequires:	python-gstreamer0.10-devel >= 0.10.10
+BuildRequires:	python-pyobject-devel >= 2.16.0
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
+Requires:	glib2 >= 1:2.26
+Requires:	gstreamer0.10 >= 0.10.33
+Requires:	gstreamer0.10-plugins-base >= 0.10.33
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,13 +45,26 @@ applications. These applications should be able to use Farsight for
 all their Audio/Video conferencing needs without having to worry about
 any of the lower level streaming and NAT traversal issues.
 
+%description -l pl.UTF-8
+Projekt Farsight to próba stworzenia szkieletu do obsługi wszystkich
+znanych protokołów konferencji audio/video. Z jednej strony oferuje
+generyczne API umożliwiające tworzenie wtyczek do różnych protokołów
+strumieniowych, z drugiej strony oferuje API klienckie do używania
+tych wtyczek.
+
+Głównym celem klientów Farsighta są komunikatory (aplikacje IM).
+Powinny móc używać Farsighta do wszystkich potrzeb konferencji
+audio/video bez zagłębiania się w niskopoziomowe szczegóły przesyłania
+strumieni czy przechodzenia NAT.
+
 %package devel
 Summary:	Header files for farsight2 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki farsight2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	gstreamer-devel >= 0.10.33
-Requires:	gstreamer-plugins-base-devel >= 0.10.23
+Requires:	glib2-devel >= 1:2.26
+Requires:	gstreamer0.10-devel >= 0.10.33
+Requires:	gstreamer0.10-plugins-base-devel >= 0.10.33
 
 %description devel
 Header files for farsight2 library.
@@ -68,6 +89,7 @@ Summary:	farsight2 library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki farsight2
 Group:		Documentation
 Requires:	gtk-doc-common
+BuildArch:	noarch
 
 %description apidocs
 farsight2 library API documentation.
@@ -80,6 +102,8 @@ Summary:	farsight2 Python bindings
 Summary(pl.UTF-8):	Wiązania Pythona do farsight2
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
+Requires:	python-gstreamer0.10 >= 0.10.10
+Requires:	python-pyobject >= 2.16.0
 
 %description -n python-farsight2
 farsight2 Python bindings.
@@ -89,6 +113,11 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
+%patch0 -p1
+cd common
+%patch1 -p1
+cd ..
+%patch2 -p1
 
 %build
 %{__gtkdocize}
