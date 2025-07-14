@@ -113,11 +113,11 @@ Wiązania Pythona do farsight2.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 cd common
-%patch1 -p1
+%patch -P1 -p1
 cd ..
-%patch2 -p1
+%patch -P2 -p1
 
 %build
 %{__gtkdocize}
